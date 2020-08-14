@@ -2,16 +2,10 @@ package com.seckillend.config;
 
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
-import com.alibaba.druid.wall.WallConfig;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Properties;
-
 
 @Configuration
 public class DruidMonitoringConfig {
@@ -69,4 +63,5 @@ public class DruidMonitoringConfig {
 //        wallFilter.setConfig(wallConfig);
 //        return wallFilter;
 //    }
+
 }

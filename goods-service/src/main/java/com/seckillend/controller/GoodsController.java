@@ -26,7 +26,6 @@ public class GoodsController {
 
     @GetMapping("/test2")
     public Object test2(){
-
         return new Goods().deleteById(3);
     }
 
