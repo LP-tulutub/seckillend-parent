@@ -6,12 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="redis-ha" />
+        <module name="commons" />
+        <module name="goods-service" />
+        <module name="client-consumer" />
         <module name="seckillend-pojo" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="client-consumer" options="-parameters" />
+      <module name="commons" options="-parameters" />
+      <module name="goods-service" options="-parameters" />
+      <module name="redis-ha" options="-parameters" />
       <module name="seckillend-parent" options="-parameters" />
       <module name="seckillend-pojo" options="-parameters" />
     </option>

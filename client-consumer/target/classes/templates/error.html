@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>错误提示页面</title>
+</head>
+<body>
+	出错了，请与管理员联系...
+	<span th:text="${exception}"></span><br>
+	path:<span th:text="${path}"></span><br>
+	error:<span th:text="${error}"></span><br>
+	message:<span th:text="${message}"></span><br>
+	timestamp:<span th:text="${timestamp}"></span><br>
+	status:<span th:text="${status}"></span><br>
+</body>
+</html>
