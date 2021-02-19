@@ -11,8 +11,8 @@ package com.seckillend.enums;
  * @author qiurunze
  */
 public enum ResultStatus {
-    SUCCESS(0, "成功"),
-    FAILD(-1, "失败"),
+    SUCCESS(1, "成功"),
+    FAILD(0, "失败"),
     EXCEPTION(-1, "系统异常"),
     PARAM_ERROR(10000, "参数错误"),
     SYSTEM_ERROR(10001, "系统错误"),
@@ -26,6 +26,7 @@ public enum ResultStatus {
     SYSTEM_DB_MESSAGE_NULL(10009, "您没有消息"),
     SYSTEM_DB_ORDER_NULL(10010, "您没有订单"),
     PATH_ERROR(10011, "接口错误"),
+    PATH_FEIGN_FALLBACK(10012, "断路"),
 
     /**
      * 注册登录

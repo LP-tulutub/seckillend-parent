@@ -45,7 +45,7 @@
      </tr>
      <tr>  
         <td>秒杀开始时间</td>  
-        <td th:text="${#dates.format(secKillGoods.startDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+        <td th:text="${#dates.format(goods.startDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
         <td id="miaoshaTip">	
         	<input type="hidden" id="remainSeconds" th:value="${remainSeconds}" />
         	<span th:if="${miaoshaStatus eq 0}">秒杀倒计时：<span id="countDown" th:text="${remainSeconds}"></span>秒</span>
@@ -57,7 +57,9 @@
             <div id="appForm">
         		<button v-if="button != 2" id="buyButton" v-on:click="seckillPath()" class="btn btn-primary btn-block" type="submit">立即秒杀</button>
         		<button v-if="button != 1" id="buyButton02" v-on:click="seckillPost()" class="btn btn-primary btn-block" type="submit">立即秒杀</button>
-        		<input type="hidden" name="goodsId" th:value="${goods.id}" />
+        		<input id="gId" type="hidden" name="goodsId" th:value="${goods.id}" />
+                <input id="gName" type="hidden" name="goodsName" th:value="${goods.goodsName}" />
+                <input id="gMPrice" type="hidden" name="goodsPrice" th:value="${goods.miaoshaPrice}" />
             </div>
         	<!--</form>-->
         </td>
@@ -68,11 +70,11 @@
      </tr>
       <tr>  
         <td>秒杀价</td>  
-        <td colspan="3" th:text="${secKillGoods.miaoshaPrice}"></td>
+        <td colspan="3" th:text="${goods.miaoshaPrice}"></td>
      </tr>
      <tr>  
         <td>库存数量</td>  
-        <td colspan="3" th:text="${secKillGoods.stockCount}"></td>
+        <td colspan="3" th:text="${goods.stockCount}"></td>
      </tr>
 
   </table>
@@ -134,7 +136,9 @@ new Vue({
             var params = new URLSearchParams()
             params.append('goodsId', String($("#appForm input").val()))
             axios.post('/message/' + this.hidePath + '/do_seckill', {
-                    'gId' : String($("#appForm input").val()),
+                    'gId' : String($("#gId").val()),
+                    'gName' : String($("#gName").val()),
+                    'gMPrice' : String($("#gMPrice").val()),
                     'verifyCode' : String($("#verifyCode").val())
                 }
             ).catch(function (error) {

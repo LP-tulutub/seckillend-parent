@@ -46,7 +46,7 @@ public class GeneratorCodeConfig {
 
         // TODO 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://192.168.1.20:3306/db1?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2b8");
+        dsc.setUrl("jdbc:mysql://192.168.1.120:3306/db1?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2b8");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("A18716296148");

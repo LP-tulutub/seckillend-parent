@@ -22,14 +22,14 @@
 
   <dependencies>
     <!--依赖-->
-<!--    <dependency>-->
-<!--      <groupId>com.seckillend</groupId>-->
-<!--      <artifactId>seata</artifactId>-->
-<!--      <version>1.0-SNAPSHOT</version>-->
-<!--    </dependency>-->
     <dependency>
       <groupId>com.seckillend</groupId>
       <artifactId>commons</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.seckillend</groupId>
+      <artifactId>seata-ha</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
 

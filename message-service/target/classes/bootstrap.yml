@@ -1,0 +1,42 @@
+# 基本服务配置
+server:
+  port: 10004 # 端口
+spring:
+  application:
+    name: message-service
+  profiles:
+    active: redis,openfeign,shardingsphere,mybatisplus,shardingsphere-druid,rocketmq,seata,constant,message-service
+  cloud:
+    nacos:
+      server-addr: 192.168.200.10 # Nacos 服务注册中心地址，keepactived 虚拟地址
+      username: nacos
+      password: nacos
+      discovery:
+        group: DEV_GROUP # # dev 表示开发环境；test 表示测试环境
+        namespace: c806a75a-5a26-4e4d-9eab-83c110cfda3d
+      config:
+        name: config
+        file-extension: yaml
+        group: DEV_GROUP
+        namespace: c806a75a-5a26-4e4d-9eab-83c110cfda3d
+    sentinel:
+      transport:
+        dashboard: 192.168.1.22:8080 # 配置 Sentinel dashboard 地址
+        port: 10024 # 默认端口，假如被占用会自动从 10020 开始依次 +1，最终确定未被占用的端口
+        client-ip: 192.168.1.106 # 虚拟机访问 windows 地址
+      datasource:
+        ds1:
+          nacos:
+            server-addr: 192.168.200.10
+            dataId: sentinel-message-service
+            groupId: DEV_GROUP
+            data-type: json
+            rule-type: flow
+            namespace: c806a75a-5a26-4e4d-9eab-83c110cfda3d
+
+# slf4j 日志配置
+logging:
+  file:
+    path: E:/logs/seckillend-parent/message-service.log
+debug: true
+
